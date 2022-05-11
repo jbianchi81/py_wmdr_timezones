@@ -16,7 +16,7 @@ def secondsToDateString(total_seconds):
     sign = lambda x: "-" if x < 0 else ( "+" if x > 0 else "±")
     hours, remainder = divmod(abs(total_seconds), 3600)
     minutes, seconds = divmod(remainder, 60)
-    return '%s%02d:%02d' % (sign(total_seconds), int(hours), int(minutes))
+    return 'UTC%s%02d:%02d' % (sign(total_seconds), int(hours), int(minutes))
 
 def timezone_to_offset(tz_string):
     timezone = pytz.timezone(tz_string)
